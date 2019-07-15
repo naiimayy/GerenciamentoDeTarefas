@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Repository.Interfaces
 {
-    class IEstadoRepository
+    interface IEstadoRepository
     {
     }
 }
