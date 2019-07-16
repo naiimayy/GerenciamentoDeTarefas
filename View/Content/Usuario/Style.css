@@ -1,0 +1,7 @@
+﻿.icone-campo {
+    float: right;
+    position: relative;
+    margin-left: -45px;
+    margin-top: -25px;
+    z-index: 2;
+}

@@ -3,5 +3,84 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h3>Lista de Usuarios</h3>
 
+<button class="btn btn-primary mb-3" data-toggle="modal" data-target="#modalCadastroUsuario"><i class="fas fa-plus"></i> Novo Usuario</button>
+
+<table class="table table-striped table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Código</th>
+            <th>Nome</th>
+            <th>Login</th>
+            <th>Senha</th>
+            <th>Ação</th>
+        </tr>
+    </thead>
+    <tbody id="lista-usuarios"></tbody>
+    <tfoot>
+        <tr>
+            <th>Código</th>
+            <th>Nome</th>
+            <th>Login</th>
+            <th>Senha</th>
+            <th>Ação</th>
+        </tr>
+    </tfoot>
+</table>
+
+<!-- Modal -->
+<div class="modal fade" id="modalCadastroUsuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"
+                    id="exampleModalLabel">
+                    Cadastro de Usuario
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label for="campo-nome">Nome</label>
+                            <input type="text" id="campo-nome" class="form-control" autocomplete="off" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label for="campo-login">Login</label>
+                            <input type="text" id="campo-login" class="form-control" autocomplete="off" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label for="campo-senha">Senha</label>
+                            <input type="password" id="campo-senha" class="form-control" name="password" autocomplete="off" />
+                            <span toggle="#campo-senha" class="fas fa-fw fa-eye icone-campo toggle-senha"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success"
+                        id="usuario-botao-salvar">
+                    <i class="fas fa-save"></i> Salvar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="~/Scripts/Usuario/Cadastro.js"></script>
