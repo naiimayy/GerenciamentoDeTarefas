@@ -15,5 +15,7 @@ namespace Repository.DataBase
         }
 
         public DbSet<Usuario> Usuarios { get; set; }
+
+        public DbSet<Categoria> Categoria { get; set }
     }
 }
