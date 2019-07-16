@@ -33,7 +33,7 @@ namespace Repository.Repositories
 
         public bool Atualizar(Categoria categoria)
         {
-            Categoria categoriaOriginal = (from x in context.Categoria where x.Id == id select x).FirstOrDefault();
+            Categoria categoriaOriginal = (from x in context.Categoria where x.Id == categoria.Id select x).FirstOrDefault();
             if (categoriaOriginal == null)
             {
                 return false;
@@ -60,7 +60,7 @@ namespace Repository.Repositories
 
         public List<Categoria> ObterTodos(string busca)
         {
-            return (from x in context.Categoria where x.RegistroAtivo == true && (x.Id.Contains(busca) || x.Nome.Contains(busca)) orderby x.Nome select x).ToList();
+            return (from x in context.Categoria where x.RegistroAtivo == true && (x.Nome.Contains(busca) || x.Nome.Contains(busca)) orderby x.Nome select x).ToList();
         }
     }
 }

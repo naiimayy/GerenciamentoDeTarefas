@@ -126,6 +126,7 @@
     <Content Include="Content\solid.min.css" />
     <Content Include="Content\svg-with-js.css" />
     <Content Include="Content\svg-with-js.min.css" />
+    <Content Include="Content\Usuario\Style.css" />
     <Content Include="Content\v4-shims.css" />
     <Content Include="Content\v4-shims.min.css" />
     <Content Include="Global.asax" />
@@ -177,6 +178,7 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Scripts\Usuario\Cadastro.js" />
     <Content Include="Web.config" />
     <Content Include="Views\Shared\Navbar.cshtml" />
     <Content Include="webfonts\fa-brands-400.svg" />
