@@ -11,7 +11,7 @@ namespace Model
     public class Categoria: Base
     {
         [Column("id")]
-        public int Id { get; set }
+        public int Id { get; set; }
 
         [Column("nome")]
         public string Nome { get; set; }
