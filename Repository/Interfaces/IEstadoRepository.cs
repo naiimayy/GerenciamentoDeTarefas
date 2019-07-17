@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,14 @@ namespace Repository.Interfaces
 {
     interface IEstadoRepository
     {
+        int Inserir(Estado estado);
+
+        bool Atualizar(Estado estado);
+
+        bool Aoagar(int id);
+
+        Estado ObterPeloId(int id);
+
+        List<Estado> ObterTodos(string busca);
     }
 }

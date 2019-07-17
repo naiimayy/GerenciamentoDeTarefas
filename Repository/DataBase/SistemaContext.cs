@@ -11,7 +11,7 @@ namespace Repository.DataBase
     class SistemaContext : DbContext
     {
         public SistemaContext() : base("DefaultConnection")
-        {       
+        {
         }
 
         public DbSet<Usuario> Usuarios { get; set; }
@@ -19,5 +19,7 @@ namespace Repository.DataBase
         public DbSet<Categoria> Categorias { get; set; }
 
         public DbSet<Cidade> Cidades { get; set; }
+
+        public DbSet<Estado> Estados { get; set; }
     }
 }
