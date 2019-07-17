@@ -8,10 +8,13 @@ namespace View.Controllers
 {
     public class CidadeController : Controller
     {
+        private CidadeRepository repository;
+
         // GET: Cidade
         public ActionResult Index()
         {
             return View();
         }
+
     }
 }
