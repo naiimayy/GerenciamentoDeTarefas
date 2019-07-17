@@ -16,7 +16,11 @@ namespace Model
         [Column("id_estado")]
         public int IdEstado { get; set; }
 
+        [Column("nome")]
+        public string Nome { get; set; }
+
         [Column("numero_habitante")]
         public int NumeroHabitante { get; set; }
+
     }
 }
