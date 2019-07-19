@@ -8,11 +8,8 @@ using System.Threading.Tasks;
 namespace Model
 {
     [Table("cidades")]
-    public class Cidade
+    public class Cidade : Base
     {
-        [Column ("id")]
-        public int Id { get; set; }
-
         [Column("id_estado")]
         public int IdEstado { get; set; }
 

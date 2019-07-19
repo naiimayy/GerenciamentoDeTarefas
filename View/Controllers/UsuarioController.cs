@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace View.Controllers
 {
-	public class UsuarioController: controller
+	public class UsuarioController : Controller
 	{
         UsuarioRepository repository;
 
@@ -59,9 +59,5 @@ namespace View.Controllers
             bool alterou = repository.Atualizar(usuario);
             return Json(new { status = alterou });
         }
-    }
-    public class UsuarioController
-    {
-
     }
 }

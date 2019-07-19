@@ -1,4 +1,5 @@
-﻿using Repository.DataBase;
+﻿using Model;
+using Repository.DataBase;
 using Repository.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -17,5 +18,29 @@ namespace Repository.Repositories
             context = new SistemaContext();
         }
 
+        public bool Aoagar(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Atualizar(Estado estado)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int Inserir(Estado estado)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Estado ObterPeloId(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Estado> ObterTodos(string busca)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

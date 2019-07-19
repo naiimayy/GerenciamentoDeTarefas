@@ -1,4 +1,5 @@
 ﻿using Model;
+using Repository.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -56,7 +57,7 @@ namespace View.Controllers
         [HttpPost]
         public JsonResult Update(Categoria categoria)
         {
-            bool alterou = repository.Alterar(categoria);
+            bool alterou = repository.Atualizar(categoria);
             return Json(new { status = alterou });
         }
     }

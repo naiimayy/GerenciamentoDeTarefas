@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Repository.Repositories
 {
-    class CidadeRepository: ICidadeRepository
+    public class CidadeRepository: ICidadeRepository
     {
         SistemaContext context;
 

@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 namespace Model
 {
     [Table("estados")]
-
     public class Estado : Base
     {
         [Column("nome")]

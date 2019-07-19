@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Repository.Repositories
 {
-    class CategoriaRepository: ICategoriaRepository
+    public class CategoriaRepository: ICategoriaRepository
     {
         SistemaContext context;
 
@@ -20,7 +20,7 @@ namespace Repository.Repositories
 
         public bool Apagar(int id)
         {
-            Categoria categoria = (from x in context.Categoria where x.Id == id select x).FirstOrDefault();
+            Categoria categoria = (from x in context.Categorias where x.Id == id select x).FirstOrDefault();
             if (categoria == null)
             {
                 return false;
@@ -48,7 +48,7 @@ namespace Repository.Repositories
         public int Inserir(Categoria categoria)
         {
             categoria.DataCriacao = DateTime.Now;
-            context.Categoria.Add(categoria);
+            context.Categorias.Add(categoria);
             context.SaveChanges();
             return categoria.Id;
         }
