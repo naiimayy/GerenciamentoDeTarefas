@@ -20,12 +20,24 @@ namespace Repository.Repositories
 
         public int Inserir(Estado estado)
         {
-            return 2;
+            estado.DataCriacao = DateTime.Now;
+            context.Estados.Add(estado);
+            context.SaveChanges();
+            return estado.Id;
         }
 
         public bool Atualizar(Estado estado)
         {
-            return Estado;
+            Estado estadoPosicionado = (from x in context.Estados where x.Id == estado.Id select x).FirstOrDefault();
+            if (estadoPosicionado == null)
+            {
+                return false;
+            }
+
+            estadoPosicionado.Nome = estado.Nome;
+            estadoPosicionado.Sigla = estado.Sigla;
+            context.SaveChanges();
+            return true;
         }
 
         public bool Apagar(int id)
@@ -42,13 +54,18 @@ namespace Repository.Repositories
 
         public Estado ObterPeloId(int id)
         {
-
+            return (from x in context.Estados where x.Id == id select x).FirstOrDefault();
         }
 
         public List<Estado> ObterTodos(string busca)
         {
-
+            return (from x in context.Estados
+                    where x.RegistroAtivo == true
+                    && (x.Nome.Contains(busca) || x.Sigla.Contains(busca))
+                    orderby x.Nome
+                    select x).ToList();
         }
+
 
 
     }
