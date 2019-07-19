@@ -18,29 +18,55 @@ namespace Repository.Repositories
             context = new SistemaContext();
         }
 
-        public bool Aoagar(int id)
+        public int Inserir(Estado estado)
         {
-            throw new NotImplementedException();
+            estado.DataCriacao = DateTime.Now;
+            context.Estados.Add(estado);
+            context.SaveChanges();
+            return estado.Id;
         }
 
         public bool Atualizar(Estado estado)
         {
-            throw new NotImplementedException();
+            Estado estadoPosicionado = (from x in context.Estados where x.Id == estado.Id select x).FirstOrDefault();
+            if (estadoPosicionado == null)
+            {
+                return false;
+            }
+
+            estadoPosicionado.Nome = estado.Nome;
+            estadoPosicionado.Sigla = estado.Sigla;
+            context.SaveChanges();
+            return true;
         }
 
-        public int Inserir(Estado estado)
+        public bool Apagar(int id)
         {
-            throw new NotImplementedException();
+            Estado estado = (from x in context.Estados where x.Id == id select x).FirstOrDefault();
+            if (estado == null)
+                return false;
+
+            estado.RegistroAtivo = false;
+            context.SaveChanges();
+            return true;
         }
+
 
         public Estado ObterPeloId(int id)
         {
-            throw new NotImplementedException();
+            return (from x in context.Estados where x.Id == id select x).FirstOrDefault();
         }
 
         public List<Estado> ObterTodos(string busca)
         {
-            throw new NotImplementedException();
+            return (from x in context.Estados
+                    where x.RegistroAtivo == true
+                    && (x.Nome.Contains(busca) || x.Sigla.Contains(busca))
+                    orderby x.Nome
+                    select x).ToList();
         }
+
+
+
     }
 }

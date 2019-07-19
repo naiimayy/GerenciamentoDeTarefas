@@ -13,7 +13,7 @@ namespace Repository.Interfaces
 
         bool Atualizar(Estado estado);
 
-        bool Aoagar(int id);
+        bool Apagar(int id);
 
         Estado ObterPeloId(int id);
 
