@@ -51,7 +51,6 @@ namespace Repository.Repositories
             return true;
         }
 
-
         public Estado ObterPeloId(int id)
         {
             return (from x in context.Estados where x.Id == id select x).FirstOrDefault();
