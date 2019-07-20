@@ -24,6 +24,8 @@
                     var colunaSigla = document.createElement('tr');
                     colunaSigla.innerHTML = registro.Sigla;
 
+                    var colunaAcao = document.createElement('td');
+
                     var botaoEditar = document.createElement('button');
                     botaoEditar.innerHTML = "<i class=\"fas fa-pen\"></i> Editar";
                     botaoEditar.classList.add("btn", "btn-primary", "mr-3", "botao-editar")
@@ -61,7 +63,19 @@
         });
     });
 
+    $('.table').on('click', '.botao-apagar', function () {
+        $id = $(this).data('id');
+        $.ajax({
+            url: 'estado/apagar/' + $id,
+            method: 'get',
+            success: function (data) {
+                obterTodos();
+            }
+        });
+    });
+
     $('#estado-botao-salvar').on('click', function () {
+        validate('form');
         if ($id == -1) {
             inserir();
         } else {
@@ -99,7 +113,7 @@
 
         $.ajax({
             method: 'post',
-            url: 'estado/update',
+            url: 'estado/store',
             data: {
                 Nome: $nome,
                 Sigla: $sigla,
