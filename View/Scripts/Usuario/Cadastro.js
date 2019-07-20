@@ -88,6 +88,7 @@ $(() => {
     });
 
     $('#usuario-botao-salvar').on('click', function () {
+        validate('form');
         if ($id == -1) {
             inserir();
         } else {

@@ -43,40 +43,43 @@
                 </button>
             </div>
             <div class="modal-body">
+                <form id="form">
 
-                <div class="row">
-                    <div class="col-12">
-                        <div class="form-group">
-                            <label for="campo-nome">Nome</label>
-                            <input type="text" id="campo-nome" class="form-control" autocomplete="off" />
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="campo-nome">Nome</label>
+                                <input type="text" id="campo-nome" name="nome" class="form-control" autocomplete="off" />
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-12">
-                        <div class="form-group">
-                            <label for="campo-login">Login</label>
-                            <input type="text" id="campo-login" class="form-control" autocomplete="off" />
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="campo-login">Login</label>
+                                <input type="text" id="campo-login" name="login" class="form-control" autocomplete="off" />
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-12">
-                        <div class="form-group">
-                            <label for="campo-senha">Senha</label>
-                            <input type="password" id="campo-senha" class="form-control" name="password" autocomplete="off" />
-                            <span toggle="#campo-senha" class="fas fa-fw fa-eye icone-campo toggle-senha"></span>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="campo-senha">Senha</label>
+                                <input type="password" id="campo-senha" class="form-control" name="password" autocomplete="off" />
+                                <span toggle="#campo-senha" class="fas fa-fw fa-eye icone-campo toggle-senha"></span>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-success"
-                        id="usuario-botao-salvar">
-                    <i class="fas fa-save"></i> Salvar
-                </button>
+
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success"
+                                id="usuario-botao-salvar">
+                            <i class="fas fa-save"></i> Salvar
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
