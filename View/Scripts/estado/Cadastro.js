@@ -55,7 +55,7 @@
     $('.table').on('click', '.botao-editar', function () {
         $id = $(this).data('id');
         $.ajax({
-            url: 'estado/apagar' + $id,
+            url: '/estado/apagar' + $id,
             method: 'get',
             success: function (data) {
                 obterTodos();
@@ -66,7 +66,7 @@
     $('.table').on('click', '.botao-apagar', function () {
         $id = $(this).data('id');
         $.ajax({
-            url: 'estado/apagar/' + $id,
+            url: '/estado/apagar/' + $id,
             method: 'get',
             success: function (data) {
                 obterTodos();
@@ -75,7 +75,7 @@
     });
 
     $('#estado-botao-salvar').on('click', function () {
-        validate('form');
+        $('form').validate;
         if ($id == -1) {
             inserir();
         } else {
@@ -89,7 +89,7 @@
 
         $.ajax({
             method: 'post',
-            url: 'estado/update',
+            url: '/estado/update',
             data: {
                 Nome: $nome,
                 Sigla: $sigla,
