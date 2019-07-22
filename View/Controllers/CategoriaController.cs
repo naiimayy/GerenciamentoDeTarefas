@@ -12,7 +12,7 @@ namespace View.Controllers
     {
         private CategoriaRepository repository;
 
-        //GET: Categgoria
+        //GET: Categoria
         public CategoriaController()
         {
             repository = new CategoriaRepository();
