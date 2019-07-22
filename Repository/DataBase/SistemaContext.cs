@@ -21,5 +21,7 @@ namespace Repository.DataBase
         public DbSet<Cidade> Cidades { get; set; }
 
         public DbSet<Estado> Estados { get; set; }
+
+        public DbSet<Cliente> Clientes { get; set; }
     }
 }
