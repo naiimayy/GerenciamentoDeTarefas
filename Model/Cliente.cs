@@ -10,8 +10,8 @@ namespace Model
     [Table("clientes")]
     public class Cliente: Base
     {
-        [Column("id_cliente")]
-        public int IdCliente { get; set; }
+        [Column("id_cidade")]
+        public int IdCidade { get; set; }
 
         [Column("nome")]
         public string Nome { get; set; }
