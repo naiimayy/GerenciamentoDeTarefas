@@ -8,5 +8,7 @@ namespace Model
 {
     public class Projeto
     {
+        
+        public List<Tarefa> Tarefas { get; set; }
     }
 }
