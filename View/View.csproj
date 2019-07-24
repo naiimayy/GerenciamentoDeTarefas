@@ -139,6 +139,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\categoria\categoria.js" />
     <Content Include="Scripts\cidade\cidade.js" />
+    <Content Include="Scripts\cliente\cliente.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
     <Content Include="Scripts\esm\popper.js" />
@@ -219,6 +220,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CategoriaController.cs" />
     <Compile Include="Controllers\CidadeController.cs" />
+    <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\EstadoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />

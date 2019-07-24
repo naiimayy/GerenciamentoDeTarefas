@@ -23,5 +23,7 @@ namespace Repository.DataBase
         public DbSet<Estado> Estados { get; set; }
 
         public DbSet<Cliente> Clientes { get; set; }
+
+        public DbSet<Tarefa> Tarefas { get; set; }
     }
 }
