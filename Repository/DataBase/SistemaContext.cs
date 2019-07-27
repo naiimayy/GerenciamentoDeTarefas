@@ -25,5 +25,7 @@ namespace Repository.DataBase
         public DbSet<Cliente> Clientes { get; set; }
 
         public DbSet<Tarefa> Tarefas { get; set; }
+
+        public DbSet<Projeto> Projetos { get; set; }
     }
 }

@@ -58,7 +58,7 @@ namespace View.Controllers
         public JsonResult Update(Cliente cliente)
         {
             bool alterou = repository.Atualizar(cliente);
-            return Json(new { status = alterou });s
+            return Json(new { status = alterou });
         }
     }
 }

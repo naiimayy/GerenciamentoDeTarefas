@@ -60,7 +60,7 @@ namespace Repository.Repositories
 
         public List<Projeto> ObterTodos(string busca)
         {
-           
+            return null;
         }
     }
 }
