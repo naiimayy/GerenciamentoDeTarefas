@@ -99,9 +99,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\Database1.mdf" />
-    <Content Include="App_Data\Database1_log.ldf">
-      <DependentUpon>Database1.mdf</DependentUpon>
+    <Content Include="App_Data\DataBase.mdf" />
+    <Content Include="App_Data\DataBase_log.ldf">
+      <DependentUpon>DataBase.mdf</DependentUpon>
     </Content>
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -131,7 +131,7 @@
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\categoria\categoria.js" />
+    <Content Include="Scripts\categoria\cadastro.js" />
     <Content Include="Scripts\cidade\cidade.js" />
     <Content Include="Scripts\cliente\cliente.js" />
     <Content Include="Scripts\esm\popper-utils.js" />

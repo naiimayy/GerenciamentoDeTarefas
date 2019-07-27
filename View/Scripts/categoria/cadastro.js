@@ -34,13 +34,12 @@ $(function () {
                     var dado = data[i];
 
 
-
                     var linha = document.createElement("tr");
                     var colunaCodigo = document.createElement("td");
                     colunaCodigo.innerHTML = dado.Id;
 
                     var colunaNome = document.createElement("td");
-                    colunaNome.innerHTML = dado.RazaoSocial;
+                    colunaNome.innerHTML = dado.Nome;
 
                     var colunaAcao = document.createElement("td");
                     var botaoEditar = document.createElement("button");
@@ -60,12 +59,80 @@ $(function () {
                     colunaAcao.appendChild(botaoEditar);
                     colunaAcao.appendChild(botaoApagar);
 
+                    linha.appendChild(colunaCodigo);
                     linha.appendChild(colunaNome);
+                    linha.appendChild(colunaAcao);
                     document.getElementById("lista-categorias").appendChild(linha);
                 }
+            }
+        })
+
+    $("categoria-botao-salvar").on("click", function () {
+        if ($id == -1) {
+            inserir();
+        } else {
+            alterar();
+        }
+    });
+
+    function alterar() {
+        $nome = $("campo-nome").val();
+        $.ajax({
+            method: "post",
+            url: "/categoria/update",
+            data: {
+                Nome: $nome
+                Id: $id
+            },
+            success: function (data) {
+                $id = -1;
+                $("#modalCadastroCategoria").modal("hide");
+                obterTodos();
+                limparCampos();
             },
             error: function (data) {
-                alert("ALGO DEU ERRADO, TENTE NOVAMENTE")
+                console.log("ERRO");
+            }
+        });
+    }
+
+    function inserir() {
+        $nome = $("#campo-nome").val();
+        $.ajax({
+            method: "post",
+            url: "/categoria/store",
+            data: {
+            Nome: $nome,
+            },
+            success: function (data) {
+                $id = -1;
+                $("#modalCadastroCategoria").modal("hide");
+                obterTodos();
+                limparCampos();
+            },
+            error: function (data) {
+                console.log("ERRO");
             }
         })
     }
+
+    function limparCampos() {
+        $("#campo-nome").val("");
+    }
+
+    $(".table").on("click", ".botao-apagar", function () {
+        $id = $(this).data("id");
+        $.ajax({
+            url: '/categoria/apagar/' + $id,
+            method: 'get',
+            success: function (data) {
+                obterTodos();
+            },
+            error: function (data) {
+                console.log('ALGO DEU ERRADO, TENTE NOVAMENTE');
+            }
+        });
+    });
+
+    obterTodos();
+});
