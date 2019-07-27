@@ -60,7 +60,7 @@ namespace Repository.Repositories
 
         public List<Projeto> ObterTodos(string busca)
         {
-           
+            return (from x in context.Projetos where x.RegistroAtivo == true && (x.Nome.Contains(busca) || x.Nome.Contains(busca)) orderby x.Nome select x).ToList();
         }
     }
 }

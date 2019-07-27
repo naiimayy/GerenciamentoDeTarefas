@@ -17,7 +17,7 @@ namespace Model
         public string Nome { get; set; }
 
         [Column("cpf")]
-        public int Cpf { get; set; }
+        public string Cpf { get; set; }
 
         [Column("data_nascimento")]
         public DateTime DataNascimento { get; set; }
@@ -32,6 +32,6 @@ namespace Model
         public string Logradouro { get; set; }
 
         [Column("cep")]
-        public int Cep { get; set; }
+        public string Cep { get; set; }
     }
 }
