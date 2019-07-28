@@ -36,8 +36,8 @@
 
 
                     var linha = document.createElement("tr");
-                    var colunaCodigo = document.createElement("td");
-                    colunaCodigo.innerHTML = dado.IdEstado;
+                    var colunaIdEstado = document.createElement("td");
+                    colunaIdEstado.innerHTML = dado.IdEstado;
 
                     var colunaNome = document.createElement("td");
                     colunaNome.innerHTML = dado.Nome;
@@ -63,9 +63,9 @@
                     colunaAcao.appendChild(botaoEditar);
                     colunaAcao.appendChild(botaoApagar);
 
-                    linha.appendChild(colunaCodigo);
+                    linha.appendChild(colunaIdEstado);
                     linha.appendChild(colunaNome);
-                    linha.appendChild(colunaAcao);
+                    linha.appendChild(colunaNumeroHabitante);
                     document.getElementById("lista-cidade").appendChild(linha);
                 }
             }
@@ -85,8 +85,8 @@
                 method: "post",
                 url: "/cidade/update",
                 data: {
-                    IdEstado: $idestado
-                    Nome: $nome
+                    IdEstado: $idestado,
+                    Nome: $nome,
                     NumeroHabitante: $numerohabitante
                 },
                 success: function (data) {
