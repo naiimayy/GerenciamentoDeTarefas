@@ -12,6 +12,7 @@ $(() => {
             data: {
                 //Inserir campo de busca
             },
+
         });
     }
 
