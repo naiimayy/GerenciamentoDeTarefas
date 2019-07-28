@@ -25,9 +25,9 @@ namespace View.Controllers
         }
 
         [HttpGet]
-        public JsonResult ObterTodos()
+        public JsonResult ObterTodos(string busca)
         {
-            List<Usuario> usuarios = repository.ObterTodos("");
+            List<Usuario> usuarios = repository.ObterTodos(busca);
             return Json(usuarios, JsonRequestBehavior.AllowGet);
         }
 

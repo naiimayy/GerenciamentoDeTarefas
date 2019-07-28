@@ -37,15 +37,19 @@ namespace Repository.Repositories
             {
                 return false;
             }
+            tarefaOriginal.Id = tarefa.Id;
             tarefaOriginal.IdCategoria = tarefa.IdCategoria;
             tarefaOriginal.IdProjeto = tarefa.IdProjeto;
             tarefaOriginal.IdUsuarioResponsavel = tarefa.IdUsuarioResponsavel;
+
             tarefaOriginal.Projeto = tarefa.Projeto;
             tarefaOriginal.Categoria = tarefa.Categoria;
             tarefaOriginal.Usuario = tarefa.Usuario;
+
             tarefaOriginal.Titulo = tarefa.Titulo;
             tarefaOriginal.Duracao = tarefa.Duracao;
             tarefaOriginal.Descricao = tarefa.Descricao;
+
             context.SaveChanges();
             return true;
         }

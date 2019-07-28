@@ -61,7 +61,10 @@ namespace Repository.Repositories
 
         public List<Usuario> ObterTodos(string busca)
         {
-            return (from x in context.Usuarios where x.RegistroAtivo == true && (x.Nome.Contains(busca) || x.Login.Contains(busca)) orderby x.Nome select x).ToList();
+            return (from x in context.Usuarios where x.RegistroAtivo == true &&
+                    (x.Nome.Contains(busca) || x.Login.Contains(busca))
+                    orderby x.Nome
+                    select x).ToList();
         }
     }
 }

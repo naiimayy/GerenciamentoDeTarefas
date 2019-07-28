@@ -4,15 +4,23 @@
 $(() => {
     $id = -1;
 
+    $("#campo-pesquisa").on("keyup", function (e) {
+        // 13 == Tecla Enter do teclado
+        if (e.keyCode == 13) {
+            obterTodos();
+        }
+    });
+
     //Obter todos os registros de usuarios (que estao ativos)
     function obterTodos() {
         $("#lista-usuarios").empty();
+        $busca = $("#campo-pesquisa").val();
 
         $.ajax({
             url: '/usuario/obtertodos',
             method: 'get',
             data: {
-
+                busca: $busca
             },
             success: function (data) {
                 for (var i = 0; i < data.length; i++) {
