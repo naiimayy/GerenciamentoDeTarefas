@@ -12,7 +12,7 @@ namespace Model
     {
 
         public int IdCliente { get; set; }
-        [ForeignKey("IdCliente")]
+        [ForeignKey("id_cliente")]
         public Cliente Cliente { get; set; }
 
         [Column("nome")]

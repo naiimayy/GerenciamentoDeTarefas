@@ -63,8 +63,59 @@
                             <div class="form-group">
                                 <label for="campo-usuario">Usuario</label>
                                 <select id="campo-usuario" class="form-control">
-
+                                    @foreach (Model.Usuario usuario in ViewBag.Usuarios)
+                                    {
+                                        <option value="@usuario.Id">@usuario.Nome</option>
+                                    }
                                 </select>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="campo-projeto">Projeto</label>
+                                <select id="campo-projeto" class="form-control">
+                                    @foreach (Model.Projeto projeto in ViewBag.Projetos)
+                                    {
+                                        <option value="@projeto.Id">@projeto.Nome</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="campo-categoria">Categoria</label>
+                                <select id="campo-categoria" class="form-control">
+                                    @foreach (Model.Categoria categoria in ViewBag.Categorias)
+                                    {
+                                        <option value="@categoria.Id">@categoria.Nome</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="campo-titulo">Título</label>
+                                <input type="text" id="campo-titulo" name="titulo" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="campo-descricao">Descricao</label>
+                                <input type="text" id="campo-descricao" class="form-control"/>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="campo-duracao">Duração</label>
+                                <input type="date" id="campo-duracao" class="form-control" value="2000-01-01"/>
                             </div>
                         </div>
                     </div>
