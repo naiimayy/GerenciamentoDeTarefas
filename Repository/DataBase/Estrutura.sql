@@ -1,21 +1,13 @@
 ﻿-- tabelas pai
-DROP TABLE usuarios;
-DROP TABLE categorias;
-DROP TABLE estados;
+DROP TABLE IF EXISTS usuarios;
+DROP TABLE IF EXISTS categorias;
+DROP TABLE IF EXISTS estados;
 
 -- tabelas filho
-DROP TABLE cidades;
-DROP TABLE clientes;
-DROP TABLE projetos;
-DROP TABLE tarefas;
-
-DELETE FROM usuarios;
-DELETE FROM categorias;
-DELETE FROM estados;
-DELETE FROM cidades
-DELETE FROM clientes;
-DELETE FROM projetos;
-DELETE FROM tarefas;
+DROP TABLE IF EXISTS cidades;
+DROP TABLE IF EXISTS clientes;
+DROP TABLE IF EXISTS projetos;
+DROP TABLE IF EXISTS tarefas;
 
 SELECT * FROM usuarios;
 SELECT * FROM categorias;
@@ -30,17 +22,23 @@ SELECT * FROM tarefas;
 	nome VARCHAR (40) NOT NULL,
 	login VARCHAR (30) NOT NULL,
 	senha VARCHAR(30) NOT NULL,
+	data_criacao DATETIME2,
+	registro_ativo BIT
 	);
 	
 	CREATE TABLE categorias(
 	id INT PRIMARY KEY IDENTITY(1,1),
 	nome VARCHAR(50) NOT NULL,
+	data_criacao DATETIME2,
+	registro_ativo BIT
 	);
 	
 	CREATE TABLE estados(
 	id INT PRIMARY KEY IDENTITY(1,1),
 	nome VARCHAR(50) NOT NULL,
 	sigla VARCHAR(2) NOT NULL,
+	data_criacao DATETIME2,
+	registro_ativo BIT
 );
 
 	CREATE TABLE cidades(
@@ -48,6 +46,8 @@ SELECT * FROM tarefas;
 	id_estado INT NOT NULL,
 	nome VARCHAR(40) NOT NULL,
 	numero_habitante INT NOT NULL,
+	data_criacao DATETIME2,
+	registro_ativo BIT
 	);
 
 	CREATE TABLE clientes(
@@ -60,6 +60,8 @@ SELECT * FROM tarefas;
 	complemento VARCHAR(20) NOT NULL,
 	logradouro VARCHAR(20) NOT NULL,
 	cep VARCHAR(20) NOT NULL,
+	data_criacao DATETIME2,
+	registro_ativo BIT
 	);
 
 	CREATE TABLE projetos(
@@ -68,6 +70,8 @@ SELECT * FROM tarefas;
 	nome VARCHAR(30) NOT NULL,
 	data_criacao_projeto DATETIME2(7) NOT NULL,
 	data_finalizacao DATETIME2(7) NOT NULL,
+	data_criacao DATETIME2,
+	registro_ativo BIT
 	);
 
 	CREATE TABLE tarefas(
@@ -78,6 +82,6 @@ SELECT * FROM tarefas;
 	titulo VARCHAR(30) NOT NULL,
 	descricao TEXT NOT NULL,
 	duracao DATETIME2(7) NOT NULL,
+	data_criacao DATETIME2,
+	registro_ativo BIT
 	);
-
-
