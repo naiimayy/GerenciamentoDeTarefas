@@ -21,6 +21,15 @@ namespace View.Controllers
         [HttpGet]
         public ActionResult Index()
         {
+            UsuarioRepository URepository = new UsuarioRepository();
+            ViewBag.Usuarios = URepository.ObterTodos("");
+
+            ProjetoRepository PRepository = new ProjetoRepository();
+            ViewBag.Projetos = PRepository.ObterTodos("");
+
+            CategoriaRepository CRepository = new CategoriaRepository();
+            ViewBag.Categorias = CRepository.ObterTodos("");
+
             return View();
         }
 
