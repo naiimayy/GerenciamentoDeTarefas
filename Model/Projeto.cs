@@ -7,17 +7,13 @@ using System.Threading.Tasks;
 
 namespace Model
 {
+    [Table("projetos")]
     public class Projeto : Base
     {
-        public Projeto()
-        {
-            Tarefas = new HashSet<Tarefa>();
-        }
-        [ForeignKey("IdCliente")]
-        public virtual Cliente Cliente { get; set; }
 
-        [Column("id_cliente")]
         public int IdCliente { get; set; }
+        [ForeignKey("IdCliente")]
+        public Cliente Cliente { get; set; }
 
         [Column("nome")]
         public string Nome { get; set; }
@@ -27,7 +23,7 @@ namespace Model
 
         [Column("data_finalizacao")]
         public DateTime DataFinalizacao { get; set; }
-        public virtual ICollection<Tarefa> Tarefas { get; set; }
+
 
     }
 }
