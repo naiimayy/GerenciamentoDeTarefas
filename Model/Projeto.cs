@@ -12,7 +12,7 @@ namespace Model
     {
 
         public int IdCliente { get; set; }
-        [ForeignKey("id_cliente")]
+        [ForeignKey("IdCliente")]
         public Cliente Cliente { get; set; }
 
         [Column("nome")]
@@ -23,7 +23,6 @@ namespace Model
 
         [Column("data_finalizacao")]
         public DateTime DataFinalizacao { get; set; }
-
-
+        
     }
 }

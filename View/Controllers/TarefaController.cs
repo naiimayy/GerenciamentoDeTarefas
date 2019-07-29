@@ -47,5 +47,26 @@ namespace View.Controllers
             repository.Inserir(tarefa);
             return Json(tarefa);
         }
+
+        [HttpGet, Route("apagar/{id}")]
+        public JsonResult Apagar(int id)
+        {
+            bool apagou = repository.Apagar(id);
+            return Json(new { status = apagou }, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpGet, Route("obterpeloId/{id}")]
+        public JsonResult ObterPeloId(int id)
+        {
+            Tarefa tarefa = repository.ObterPeloId(id);
+            return Json(tarefa, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public JsonResult Update(Tarefa tarefa)
+        {
+            bool alterou = repository.Atualizar(tarefa);
+            return Json(new { status = alterou });
+        }
     }
 }
